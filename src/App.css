@@ -1,38 +1,254 @@
-.App {
-  text-align: center;
+body {
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.heading {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(0,90,0,1) 0%, rgba(57,170,32,1) 100%);
+    text-align: center;
+    box-shadow:  9px 9px 18px #151515, -9px -9px 18px #1d1d1d;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+    color: #ffffff;
+    font-size: 45px;
+    letter-spacing: 1px;
+    margin: 15px 5px;
+    text-shadow: 2px 2px 8px #191919;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search {
+    width: 48%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    background: #F1F1E6;
+    border: none;
+    color:#191919;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
+
+.search:focus {
+    outline-color: #FF7123;
+}
+
+.btn {
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 12px 75px;
+    margin: 0px 0px 30px;
+    border: none;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 8px #191919;
+    color: #ffffff;
+    background: #FF7123;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.btn:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #ffffff;
+    z-index: -1;
+}
+
+.btn:hover, .btn:focus {
+    color: #FF7123;
+    text-shadow: none;
+}
+
+.btn:hover:before, .btn:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    align-self: center;
+    background: rgba(241,241,230,0.9);
+    margin: 5px 0px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    padding: 20px 10px 10px;
+    border-bottom: 2px solid #191919;
+}
+
+.head {
+    width: 130px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 5px 10px;
+}
+
+.row {
+    text-align: center;
+    padding: 5px;
+}
+
+.margin {
+    margin: 7px;
+}
+
+.totalInfo {
+    padding: 0px 50px;
+    margin: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    color:#191919;
+}
+
+.totalNumbers {
+    font-size: 22px;
+    color: #005b5c;
+    flex:1;
+}
+
+.headingBackground {
+    background: linear-gradient(180deg, rgba(0,90,0,0.6) 0%, rgba(57,170,32,0.5) 100%);
+    width: 100%;
+}
+
+h2 {
+    font-size: 35px;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px #191919;
+}
+
+.subheader {
+    font-size: 20px;
+    font-weight: bold;
+    color:#191919;
+    margin: 10px 5px 25px;
+}
+
+.bold {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nutritionFacts {
+    font-size: 17px;
+    margin: 6px;
+}
+
+hr {
+    border: 1px dashed #005b5c;
+    border-radius: 5px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.bottomInfo {
+    color:#ffffff;
+    margin-top: 0px;
+}
+
+.reference {
+    color: #FF7123;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.reference:hover {
+    color:#ffffff;
+}
+
+@media all and (max-width: 920px) {
+    .search {
+        width: 90%;
+    }
+
+    .column {
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 540px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    .search {
+        font-size: 17px;
+    }
+
+    .btn, .totalNumbers {
+        font-size: 19px;
+    }
+
+    .btn {
+        padding: 10px 55px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .head {
+        width: auto;
+        font-size: 18px;
+    }
+
+    .totalInfo {
+        padding: 0px 10px;
+        margin: 4px;
+        font-size: 18px;
+    }
+    
+    .nutritionFacts {
+        font-size: 16px;
+    } 
+}
+
