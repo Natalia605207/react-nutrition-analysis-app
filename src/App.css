@@ -49,6 +49,8 @@ h1 {
 
 .search:focus {
     outline-color: #FF7123;
+    outline-style: outset;
+    outline-width: thin;
 }
 
 .btn {

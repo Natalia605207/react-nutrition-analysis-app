@@ -100,7 +100,6 @@
 
   @media all and (max-width: 540px) {
     .loader-3 {
-      width: 7em;
-      left: 35%;
+      left: 30%;
     }
   }

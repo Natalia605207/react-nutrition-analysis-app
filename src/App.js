@@ -1,17 +1,37 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import './App.css';
 import { Nutrition } from "./components/Nutrition";
 import { LoaderPage } from "./Loader/LoaderPage";
 import video from './assets/salad.mp4';
 import { IngredientsNutrition } from "./components/IngredientsNutrition";
 import Swal from "sweetalert2";
+import { gsap } from "gsap";
 
 function App() {
-
   const [mySearch, setMySearch] = useState();
   const [wordSubmitted, setWordSubmitted] = useState('');
   const [myNutrition, setMyNutrition] = useState();
   const [stateLoader, setStateLoader] = useState(false);
+
+  const animation = useRef();
+  const tl = useRef();
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      tl.current = gsap
+        .timeline()
+        .from(".heading", {
+          duration: 1, y: -50, ease: "power0.easeNone", opacity: 0
+        })
+        .from(".search", {
+          duration: 0.8, y: -70, ease: "power0.easeNone", opacity: 0
+        })
+        .from(".cta", {
+          duration: 0.9, y: -90, ease: "power0.easeNone", opacity: 0
+        });
+    }, animation);
+    return () => ctx.revert()
+  }, []);
 
   const APP_ID = '88745f9f';
   const APP_KEY = '44daed35286b7c6b74e03343a896677e';
@@ -61,7 +81,7 @@ function App() {
   }, [wordSubmitted])
 
   return (
-    <div>
+    <div ref={animation}>
       <video autoPlay muted loop>
         <source src={video} type='video/mp4'/>
       </video>
@@ -78,7 +98,7 @@ function App() {
           className="search"
         />
         </form>
-        <div className="container">
+        <div className="container cta">
         <button onClick={finalSearch} type="submit" className="btn">Analyze</button>
         </div>
       <div>
