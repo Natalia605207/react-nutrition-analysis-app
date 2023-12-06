@@ -22,7 +22,7 @@ video {
 .heading {
     display: flex;
     justify-content: center;
-    background: linear-gradient(180deg, rgba(0,90,0,1) 0%, rgba(57,170,32,1) 100%);
+    background: linear-gradient(180deg, rgba(0,130,0,1) 0%, rgba(57,170,32,1) 100%);
     text-align: center;
     box-shadow:  9px 9px 18px #151515, -9px -9px 18px #1d1d1d;
 }

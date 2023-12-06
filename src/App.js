@@ -36,7 +36,7 @@ function App() {
       setStateLoader(false);
       Swal.fire({
         title: "Check the ingredients!",
-        text: "They are entered incorrectly.",
+        text: "They should be entered like: 1 cup milk, 2 bananas, 250 g strawberry, etc.",
         icon: "warning",
         confirmButtonColor: "#39aa20",
         confirmButtonText: "OK!"
