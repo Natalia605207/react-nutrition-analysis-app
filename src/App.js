@@ -52,6 +52,7 @@ function App() {
       setStateLoader(false);
       const data = await response.json();
       setMyNutrition(data);
+      console.log(data);
     } else {
       setStateLoader(false);
       Swal.fire({
@@ -130,7 +131,7 @@ function App() {
         </div>
         </div>
         <div className="footer">
-        <p className="bottomInfo">Developed by <a className="reference" href="https://natalia-musikhina-portfolio.glitch.me/" target="_blank" rel="noreferrer">Natalia Musikhina</a></p>
+        <p className="bottomInfo">Developed by <a className="reference" href="https://natalia-webdev.com" target="_blank" rel="noreferrer">Natalia Musikhina</a></p>
         <p className="bottomInfo">Powered by <a className="reference" href="https://www.edamam.com/" target="_blank" rel="noreferrer">www.edamam.com</a></p>
         </div>
       </div>
